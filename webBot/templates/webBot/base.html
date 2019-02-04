@@ -1,0 +1,182 @@
+{% load static %}
+<html>
+
+<head>
+  <title>GoldenCow</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <div class="page-wrapper chiller-theme toggled">
+    {% if user.is_active %}
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">
+            <a href="#">pro sidebar</a>
+            <div id="close-sidebar">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+          <div class="sidebar-header">
+            
+            <div class="user-info">
+              <span class="user-name">
+                <strong>Welcome, {{user.username}}</strong>
+              </span>
+              <span class="user-role">{{user.email}}</span>
+              <span class="user-status">
+                <i class="fa fa-circle"></i>
+                <span>Online</span>
+              </span>
+            </div>
+          </div>
+          <!-- sidebar-header  -->
+          <div class="sidebar-search">
+            <div>
+              <div class="input-group">
+                <input type="text" class="form-control search-menu" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- sidebar-search  -->
+        <div class="sidebar-menu">
+          <ul>
+            <li >
+              <a href="/dashboard">
+                <i class="fa fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span>My Page</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="#">회원정보
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">비밀번호 변경</a>
+                  </li>
+                  <li>
+                    <a href="#">포인트 충전</a>
+                  </li>
+                  <li>
+                    <a href="#">충전기록</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="far fa-gem"></i>
+                <span>Telegram Bot</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="#">차익거래 봇</a>
+                  </li>
+                  <li>
+                    <a href="#">상장공지 알림 봇</a>
+                  </li>
+                  <li>
+                    <a href="#">~ 봇</a>
+                  </li>
+                  <li>
+                    <a href="#">~ 봇</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="sidebar-dropdown">
+              <a href="#">
+                <i class="fa fa-globe"></i>
+                <span>Maps</span>
+              </a>
+              <div class="sidebar-submenu">
+                <ul>
+                  <li>
+                    <a href="#">Google maps</a>
+                  </li>
+                  <li>
+                    <a href="#">Open street map</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">
+                  <i class="fa fa-tachometer-alt"></i>
+                  <span>Logout</span>
+                </a>
+            </li>
+            <!-- sidebar-menu  -->
+        </div>
+    </nav>
+    {% else %}
+    <h1>You have to Login!!!!</h1>
+    <a href="/login">Login</a>   
+    <a href="/signup">SignUp</a>  
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+  </div>
+
+
+</body>
+
+</html>
+
+<script>
+  $(".sidebar-dropdown > a").click(function () {
+    $(".sidebar-submenu").slideUp(200);
+    if (
+      $(this)
+      .parent()
+      .hasClass("active")
+    ) {
+      $(".sidebar-dropdown").removeClass("active");
+      $(this)
+        .parent()
+        .removeClass("active");
+    } else {
+      $(".sidebar-dropdown").removeClass("active");
+      $(this)
+        .next(".sidebar-submenu")
+        .slideDown(200);
+      $(this)
+        .parent()
+        .addClass("active");
+    }
+  });
+
+  $("#close-sidebar").click(function () {
+    $(".page-wrapper").removeClass("toggled");
+  });
+  $("#show-sidebar").click(function () {
+    $(".page-wrapper").addClass("toggled");
+  });
+</script>

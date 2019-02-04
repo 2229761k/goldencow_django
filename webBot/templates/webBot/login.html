@@ -1,0 +1,17 @@
+<html>
+<!-- 로그인 되어있는 경우 -->
+{% if user.is_active %}
+<h2> Welcome, {{user.username}} </h2>
+<a href="{% url 'logout' %}">로그아웃</a>
+
+
+{% else %}
+<h2>로그인</h2>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="로그인" />
+</form>
+{% endif %}
+
+</html>

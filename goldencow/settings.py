@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webBot'
+    'webBot',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'goldencow.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +124,6 @@ STATIC_URL = '/static/'
 
 # 정적파일 경로 추가 (나중에 css건드릴때.)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 로그인 이후 경로 수정
+LOGIN_REDIRECT_URL = "/"
