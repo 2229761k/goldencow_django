@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from .forms import UserForm, LoginForm
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.template import RequestContext
 
 def signup(request):
@@ -13,7 +13,7 @@ def signup(request):
             login(request, new_user)
             print('success')
 
-            return redirect('login')
+            return redirect('dashboard')
         else :
             return HttpResponse('failed')
     else:
@@ -30,12 +30,16 @@ def signin(request):
         if user is not None:
             login(request, user)
             print('success')
-            return redirect('/')
+            return redirect('dashboard')
         else:
             return HttpResponse('로그인 실패. 다시 시도 해보세요.')
     else:
         form = LoginForm()
         return render(request, 'webBot/login.html', {'form': form})
+
+def signout(request):
+    logout(request)
+    return render(request, 'webBot/home.html', {})
 
 def home(request):
     return render(request, 'webBot/home.html', {})

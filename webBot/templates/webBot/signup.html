@@ -1,10 +1,38 @@
+{% load static %}
 
 <html>
-    <h2>회원가입</h2>
-    <form method="post" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="회원가입" />
-    </form>
-    
+
+<head>
+    <script src='{% static "webBot/js/bootstrap.min.js" %}'></script>
+    <link href='{% static "webBot/css/bootstrap.min.css" %}' rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:100vh">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-head">
+                        <h2>로그인</h2>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="회원가입" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
 </html>
