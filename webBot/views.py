@@ -13,7 +13,7 @@ def signup(request):
             login(request, new_user)
             print('success')
 
-            return redirect('dashboard')
+            return redirect('login')
         else :
             return HttpResponse('failed')
     else:
