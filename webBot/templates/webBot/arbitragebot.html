@@ -1,9 +1,194 @@
 {% extends "webBot/base.html" %}
 {% load static %}
-
 {% block content %}
-
 <main class="page-content">
-    
+    <div class="card">
+        <div class="card-head">BOT 리스트</div>
+        <hr>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>실행/정지</th>
+                        <th>동작상태</th>
+                        <th>거래 기준 통화</th>
+                        <th>거래 대상 코인</th>
+                        <th>차익거래 전략</th>
+                        <th>거래 최대 수량(1회당)</th>
+                        <th>목표수익(%)</th>
+                        <th>우선 매매 거래소</th>
+                        <th>익절 매매전략</th>
+                        <th>거래소 1</th>
+                        <th>거래소 2</th>
+                        <th>거래소 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br><br>
+    <div class="card">
+        <div class="card-head">BOT No: 2</div>
+        <hr>
+        <div class="card-body">
+            <div style="float: left; width: 33%;">
+                <table class="table">
+                    <thead style="border: 1px solid grey; text-align:center; background-color: aqua">
+                        <tr>
+                            <th>거래소 선택</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>거래소 1</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bithumb">Bithumb</option>
+                                    <option value="upbit">Upbit</option>
+                                    <option value="binance">Binance</option>
+                                    <option value="okex">Okex</option>
+                                    <option value="bittrex">Bittrex</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>거래소 2</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bithumb">Bithumb</option>
+                                    <option value="upbit">Upbit</option>
+                                    <option value="binance">Binance</option>
+                                    <option value="okex">Okex</option>
+                                    <option value="bittrex">Bittrex</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>거래소 3</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bithumb">Bithumb</option>
+                                    <option value="upbit">Upbit</option>
+                                    <option value="binance">Binance</option>
+                                    <option value="okex">Okex</option>
+                                    <option value="bittrex">Bittrex</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>거래소 4</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bithumb">Bithumb</option>
+                                    <option value="upbit">Upbit</option>
+                                    <option value="binance">Binance</option>
+                                    <option value="okex">Okex</option>
+                                    <option value="bittrex">Bittrex</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>거래소 5</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bithumb">Bithumb</option>
+                                    <option value="upbit">Upbit</option>
+                                    <option value="binance">Binance</option>
+                                    <option value="okex">Okex</option>
+                                    <option value="bittrex">Bittrex</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float: left; width: 33%;">
+                <table class="table">
+                    <thead style="border: 1px solid grey; text-align:center; background-color: aqua">
+                        <tr>
+                            <th>차익거래 설정</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>우선 매매 거래소</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bithumb">Bithumb</option>
+                                    <option value="upbit">Upbit</option>
+                                    <option value="binance">Binance</option>
+                                    <option value="okex">Okex</option>
+                                    <option value="bittrex">Bittrex</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>차익거래전략</label>
+                                <select style="float: right; width:60%">
+                                    <option value="bid_priority">매수우선</option>
+                                    <option value="sell_priority">매도우선</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>목표수익(%)</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>거래 최대 수량(1회당)</label>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>익절매매전략</label>
+                                <select style="float: right; width:60%">
+                                    <option value="market_order">즉시매매</option>
+                                    <option value="limit_order">시장대응</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float: left; width: 33%;">
+                <table class="table">
+                    <thead style=" border: 1px solid grey;text-align:center; background-color: aqua">
+                        <tr>
+                            <th>도움말</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                목표 수익(%)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </main>
-{% blockend %}
+{% endblock %}
