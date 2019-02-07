@@ -48,5 +48,14 @@ def home(request):
 def dashboard(request):
     return render(request, 'webBot/dashboard.html', {})
 
+# 상장거래봇
 def listingbot(request):
     return render(request, 'webBot/listingbot.html', {})
+
+# api 설정
+def apisetting(request):
+    return render(request, 'webBot/apisetting.html', {})
+
+# 차익거래봇
+def arbitragebot(request):
+    return render(request, 'webBot/arbitragebot.html', {})

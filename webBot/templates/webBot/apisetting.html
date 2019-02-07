@@ -1,0 +1,104 @@
+{% extends "webBot/base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="page-content">
+    <div class="card">
+        <div class="card-head">API 설정</div>
+        <hr>
+        <div class="card-body">
+            <table class="table">
+                <thead style="text-align:center">
+                    <tr>
+                        <th>Exchange</th>
+                        <th>key1</th>
+                        <th>key2</th>
+                        <th>Passphrase</th>
+                        <th>Confirm</th>
+                        <th>Connection</th>
+                    </tr>
+                </thead>
+                <tbody style="text-align:center">
+                    <tr>
+                        <td>BITHUMB</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="submit" value="확 인">
+                        </td>
+                        <td>
+                            <i class="fa fa-circle" style="color:red"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>UPBIT</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="submit" value="확 인">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BINANCE</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="submit" value="확 인">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OKEX</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="submit" value="확 인">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BITTREX</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="submit" value="확 인">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+
+
+{% endblock %}

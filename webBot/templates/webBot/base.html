@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Popper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  
+
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
@@ -76,8 +76,14 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/dashboard">API 설정
+                    <a href="/apisetting">API 설정
                     </a>
+                  </li>
+                  <li>
+                    <a href="#">잔고확인</a>
+                  </li>
+                  <li>
+                    <a href="#">거래내역 조회</a>
                   </li>
                   <li>
                     <a href="#">비밀번호 변경</a>
@@ -99,7 +105,7 @@
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a href="#">차익거래 봇</a>
+                    <a href="/arbitragebot">차익거래 봇</a>
                   </li>
                   <li>
                     <a href="/listingbot">상장거래 봇</a>
@@ -141,6 +147,7 @@
     </nav>
     {% block content %}
     {% endblock %}
+    
     {% else %}
     <h1>You have to Login!!!!</h1>
     <a href="/login">Login</a>

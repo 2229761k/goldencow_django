@@ -9,6 +9,8 @@ urlpatterns = [
     url(r'^login/$', views.signin, name='login'),
     url(r'^logout/$', views.signout, name='signout'),
     url(r'^listingbot/$', views.listingbot, name='listingbot'),
+    url(r'^apisetting/$', views.apisetting, name='apisetting'),
+    url(r'^arbitragebot/$', views.arbitragebot, name='arbitragebot'),
 
 
 ]
