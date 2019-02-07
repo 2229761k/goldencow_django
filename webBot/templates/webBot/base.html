@@ -139,15 +139,15 @@
             <!-- sidebar-menu  -->
         </div>
     </nav>
+    {% block content %}
+    {% endblock %}
     {% else %}
-
     <h1>You have to Login!!!!</h1>
     <a href="/login">Login</a>
     <a href="/signup">SignUp</a>
     {% endif %}
 
-    {% block content %}
-    {% endblock %}
+
   </div>
 
 
