@@ -48,3 +48,5 @@ def home(request):
 def dashboard(request):
     return render(request, 'webBot/dashboard.html', {})
 
+def listingbot(request):
+    return render(request, 'webBot/listingbot.html', {})
