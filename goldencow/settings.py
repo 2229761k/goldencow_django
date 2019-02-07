@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 정적파일 경로 추가 (나중에 css건드릴때.)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'webBot/static')
 
 # 로그인 이후 경로 수정
 LOGIN_REDIRECT_URL = "/"
