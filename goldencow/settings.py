@@ -120,11 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# static files
 STATIC_URL = '/static/'
-
-# 정적파일 경로 추가 (나중에 css건드릴때.)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
 # 로그인 이후 경로 수정
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = '/login'
