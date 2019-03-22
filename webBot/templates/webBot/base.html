@@ -5,15 +5,15 @@
   <title>GoldenCow</title>
   <link href='{% static "webBot/css/bootstrap.min.css" %}' rel="stylesheet">
   <link href='{% static "webBot/css/bootstrap.css" %}' rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <script src='{% static "webBot/js/bootstrap.min.js" %}'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Popper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-  
+
 </head>
 
 <body>
@@ -131,9 +131,9 @@
                     <a href="#">골든카우 그룹채팅</a>
                   </li>
                   <li>
-                      <a href="#">골든카우 브리핑</a>
-                    </li>
-                 
+                    <a href="#">골든카우 브리핑</a>
+                  </li>
+
                 </ul>
               </div>
             </li>
@@ -151,19 +151,94 @@
     {% endblock %}
 
     {% else %}
-    <h1>You have to Login!!!!</h1>
-    <a href="/login">Login</a>
-    <a href="/signup">SignUp</a>
-    {% endif %}
+    <div class="container" style="margin-top:70px; ">
+      <center>
+        <h1>Welcome to Cow Project</h1>
+      </center>
+      <br>
+      <div class="col-md-12">
+        <div class="col-md-4" style="float:left; width:50%">
+          <img src='{% static "webBot/img/zombie.jpeg" %}' alt="" style="width: 100%">
+        </div>
+        <div class="col-md-4" style="float:left; width:50%">
+          <img src='{% static "webBot/img/bronze.jpeg" %}' alt="" style="width: 100%">
+        </div>
+        <div class="col-md-4" style="float:left; width:50%">
+          <img src='{% static "webBot/img/golden.jpeg" %}' alt="" style="width: 100%">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-4" style="float:left; width:50%">
+          <img src='{% static "webBot/img/angel.jpeg" %}' alt="" style="width: 100%">
+        </div>
+        <div class="col-md-4" style="float:left; width:50%">
+          <img src='{% static "webBot/img/devil.jpeg" %}' alt="" style="width: 100%">
+        </div>
+        <div class="col-md-4" style="float:left; width:50%">
+          <img src='{% static "webBot/img/silver.jpeg" %}' alt="" style="width: 100%">
+        </div>
+      </div>
+      <div style="margin-left: 30%">
+          <button class="button button1">
+            <a href="/login">Login</a>
+          </button>
+    
+          <button class="button button1">
+            <a href="/signup">SignUp</a>
+          </button>
+        </div>
+    </div>
+
+    
 
 
   </div>
 
 
+  {% endif %}
+
+
+  </div>
+
+
+
 </body>
 
 </html>
+<style>
+  .col-md-2 {
+    padding: 0px
+  }
 
+  .button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    width: 28%
+  }
+
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+</style>
 <script>
   $(".sidebar-dropdown > a").click(function () {
     $(".sidebar-submenu").slideUp(200);
