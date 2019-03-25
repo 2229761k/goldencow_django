@@ -12,7 +12,8 @@
   <!-- Popper JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+  <script src='{% static "fusionchart/fusioncharts.js" %}'></script>
+  <script src='{% static "fusionchart/themes/fusioncharts.theme.fint.js" %}'></script>
 
 </head>
 
@@ -101,15 +102,21 @@
             <li class="sidebar-dropdown">
               <a href="#">
                 <i class="far fa-gem"></i>
-                <span>GoldenCow Bot</span>
+                <span>Line Up</span>
               </a>
               <div class="sidebar-submenu">
                 <ul>
                   <li>
-                    <a href="/arbitragebot">차익거래 봇</a>
+                    <a href="/arbitragebot">Angel Cow(차익거래 봇)</a>
                   </li>
                   <li>
-                    <a href="/listingbot">상장거래 봇</a>
+                    <a href="/listingbot">Golden Cow(상장거래 봇)</a>
+                  </li>
+                  <li>
+                    <a href="/zombiecowbot">Zombie Cow(매집알림 봇)</a>
+                  </li>
+                  <li>
+                    <a href="/upbitEventbot">Silver Cow(업비트 이벤트 봇)</a>
                   </li>
                 </ul>
               </div>
@@ -179,17 +186,17 @@
         </div>
       </div>
       <div style="margin-left: 30%">
-          <button class="button button1">
-            <a href="/login">Login</a>
-          </button>
-    
-          <button class="button button1">
-            <a href="/signup">SignUp</a>
-          </button>
-        </div>
+        <button class="button button1">
+          <a href="/login">Login</a>
+        </button>
+
+        <button class="button button1">
+          <a href="/signup">SignUp</a>
+        </button>
+      </div>
     </div>
 
-    
+
 
 
   </div>

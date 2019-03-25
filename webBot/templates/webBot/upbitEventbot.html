@@ -1,0 +1,116 @@
+{% extends "webBot/base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="page-content">
+    <div class="card">
+        <div class="card-head">상장 받아올 거래소</div>
+        <hr>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>BITHUMB</th>
+                        <th>UPBIT</th>
+                        <th>BINANCE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label >
+                                <button class="switch" id="myButton1">OFF</button>
+
+                            </label>
+                        </td>
+                        <td>
+                            <label >
+                                <button class="switch2" id="myButton2">OFF</button>
+
+                            </label>
+                        </td>
+                        <td>
+                            <label >
+                                <button class="switch3" id="myButton3">OFF</button>
+
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <a class="minus btn-small btn btn-inverse" href="#">-</a>
+                                <span id="roomcount1" class='label'>5</span>%
+                                <a class="plus btn-small btn btn-inverse" href="#">+</a>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <a class="minus btn-small btn btn-inverse" href="#">-</a>
+                                <span id="roomcount2" class='label'>5</span>%
+                                <a class="plus btn-small btn btn-inverse" href="#">+</a>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <a class="minus btn-small btn btn-inverse" href="#">-</a>
+                                <span id="roomcount3" class='label'>5</span>%
+                                <a class="plus btn-small btn btn-inverse" href="#">+</a>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br><br>
+    <div class="card">
+        <div class="card-head">API 연결거래소</div>
+        <hr>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>거래소</th>
+                        <th>잔 고</th>
+                        <th>구매비중</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BITHUMB</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>UPBIT</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>BINANCE</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>OKEX</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>BITTREX</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+
+<script src='{% static "js/plusminusbutton.js" %}'></script>
+<link href="{% static 'css/onoffbutton.css' %}" rel="stylesheet">
+
+
+{% endblock %}

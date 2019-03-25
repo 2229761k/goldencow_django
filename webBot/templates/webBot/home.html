@@ -1,13 +1,13 @@
 {% extends "webBot/base.html" %}
 
 <html>
-
-<head>
-
-</head>
-
-<body>
-
-</body>
-
+  <head>
+    <title>FC-python wrapper</title>
+    {% load static %} 
+    <script src='{% static "fusionchart/fusioncharts.js" %}'></script>
+    <script src='{% static "fusionchart/themes/fusioncharts.theme.fint.js" %}'></script>
+  </head>
+  <body>
+    <div id="chart-1">{{ output|safe }}</div>
+  </body>
 </html>

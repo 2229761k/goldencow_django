@@ -4,6 +4,12 @@ from .forms import UserForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.template import RequestContext
+import sys
+sys.path.append('../')
+from webBot.static.fusionchart.fusioncharts import FusionCharts
+import requests
+from .models import Post
+from django.utils import timezone
 
 def signup(request):
     if request.method == "POST":
@@ -59,3 +65,61 @@ def apisetting(request):
 # 차익거래봇
 def arbitragebot(request):
     return render(request, 'webBot/arbitragebot.html', {})
+
+# # 매집증후 포착 봇
+# def zombiecowbot(request):
+#     return render(request, 'webBot/zombiecowbot.html', {})
+
+# 업비트 공지 봇
+def upbitEventbot(request):
+    return render(request, 'webBot/upbitEventbot.html', {})
+
+
+
+
+def chart1(request):
+  
+
+    res = requests.post('http://localhost:3000/testing',  json={"symbol": 'BTC'})
+    # Create an object for the column2d chart using the FusionCharts class constructor
+    column2d = FusionCharts("column2d", "ex1" , "600", "400", "chart-1", "json",
+         # The data is passed as a string in the `dataSource` as parameter.
+        """{  
+               "chart": {  
+                  "caption":"Harry\'s SuperMart",
+                  "subCaption":"Top 5 stores in last month by revenue",
+                  "numberPrefix":"$",
+                  "theme":"ocean"
+               },
+               "data": [  
+                    {"label":"Bakersfield Central", "value":"880000"},
+                    {"label":"Garden Groove harbour", "value":"730000"},
+                    {"label":"Los Angeles Topanga", "value":"590000"},
+                    {"label":"Compton-Rancho Dom", "value":"520000"},
+                    {"label":"Daly City Serramonte", "value":"330000"}
+                ]
+            }""")
+
+    # returning complete JavaScript and HTML code, 
+    # which is used to generate chart in the browsers.
+    column3d = FusionCharts("column2d", "ex2" , "600", "400", "chart-2", "json", 
+        # The data is passed as a string in the `dataSource` as parameter.
+        """{  
+               "chart": {  
+                  "caption":"Harry\'s SuperMart",
+                  "subCaption":"Top 5 stores in last month by revenue",
+                  "numberPrefix":"$",
+                  "theme":"ocean"
+               },
+               "data": [  
+                    {"label":"Bakersfield Central", "value":"880000"},
+                    {"label":"Garden Groove harbour", "value":"730000"},
+                    {"label":"Los Angeles Topanga", "value":"590000"},
+                    {"label":"Compton-Rancho Dom", "value":"520000"},
+                    {"label":"Daly City Serramonte", "value":"330000"}
+                ]
+            }""")
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers. 
+    return  render(request, 'webBot/zombiecowbot.html', {'output1' : column2d.render(), 'output2' : column3d.render(), 'post':posts})
